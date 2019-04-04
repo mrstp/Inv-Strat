@@ -16,7 +16,7 @@ df['returns'] =df['Var1']/df['Var1'].shift(1)-1
 df.loc[df['Var1']>df['20sma'],'index'] = 1
 df.loc[df['Var1']<df['20sma'],'index'] = (-1)
 
-# returns for the day of a strategy going long in case the day before 1 happens and short in case 2 happens 
+# returns for the day of a strategy going long or short 
 df['str_ret'] = df['returns']*df['index'].shift(1)
 
 #mean,minimum and maximum return
