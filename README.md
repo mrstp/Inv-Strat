@@ -12,7 +12,7 @@ df['20sma'] = df['Var1'].rolling(20).mean()
 # returns as (closing price/closing of the day before) -1
 df['returns'] =df['Var1']/df['Var1'].shift(1)-1
 
-# # index +1 if closing price is > than the 20sma, index -1 if closing price is < than the 20sma
+# index +1 if closing price is > than the 20sma, index -1 if closing price is < than the 20sma
 df.loc[df['Var1']>df['20sma'],'index'] = 1
 df.loc[df['Var1']<df['20sma'],'index'] = (-1)
 
