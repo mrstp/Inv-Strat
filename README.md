@@ -19,17 +19,17 @@ df.loc[df['Var1']<df['20sma'],'index'] = (-1)
 # returns for the day of a strategy going long or short 
 df['str_ret'] = df['returns']*df['index'].shift(1)
 
-#mean,minimum and maximum return
+# mean,minimum and maximum return
 df["str_ret"].mean()
 df["str_ret"].min()
 df["str_ret"].max()
 
-#annualized standard deviation of returns
+# annualized standard deviation of returns
 df["str_ret"].std()*(252**0.5)
 Sharpe ratio
 df["str_ret"].mean()/df["str_ret"].std()
 
-#kurtosis and skewness
+# kurtosis and skewness
 from scipy.stats import kurtosis
 from scipy.stats import skew
 df["str_ret"].skew()
@@ -37,11 +37,11 @@ df["str_ret"].skew()
 df["str_ret"].kurtosis()
 
 
-#cumulative performance of both the L/S strategy and the long only
+# cumulative performance of both the L/S strategy and the long only
 df["cum_str_ret"] = df["str_ret"].cumsum()
 df["cum_ret"] = df["returns"].cumsum()
 
-#plot of both charts
+# plot of both charts
 df["cum_str_ret"].plot.line()
 df["cum_ret"].plot.line()
 
