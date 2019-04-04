@@ -26,14 +26,13 @@ df["str_ret"].max()
 
 # annualized standard deviation of returns
 df["str_ret"].std()*(252**0.5)
-Sharpe ratio
+# Sharpe ratio
 df["str_ret"].mean()/df["str_ret"].std()
 
 # kurtosis and skewness
 from scipy.stats import kurtosis
 from scipy.stats import skew
 df["str_ret"].skew()
-
 df["str_ret"].kurtosis()
 
 
